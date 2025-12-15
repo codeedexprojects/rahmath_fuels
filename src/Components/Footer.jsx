@@ -12,14 +12,24 @@ import {
 import Logo from "../assets/logos/Logo.png";
 
 export default function Footer() {
+
+  // ✅ SAME NAV LINKS AS HEADER
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "Service", path: "/Services" },
+    { name: "About", path: "/About" },
+    { name: "Contact", path: "/Contact" },
+    { name: "Blog", path: "/Blogs" },
+  ];
+
   return (
     <footer className="bg-white border-t-2 border-blue-200">
-      <div className="lg:px-10 mx-auto px-4 sm:px-6 md:px-10  xl:px-20 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10">
 
         {/* MAIN GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
 
-          {/* Company Info */}
+          {/* COMPANY INFO */}
           <div>
             <img src={Logo} alt="Logo" className="h-12 mb-4" />
 
@@ -33,7 +43,7 @@ export default function Footer() {
                   <a
                     key={index}
                     href="#"
-                    className="text-blue-900 hover:text-blue-700 transition-colors"
+                    className="text-blue-900 hover:text-blue-700 transition"
                   >
                     <Icon size={20} />
                   </a>
@@ -42,26 +52,27 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Navigation */}
+          {/* QUICK NAVIGATION – SAME AS HEADER */}
           <div>
             <h3 className="text-lg font-bold text-blue-900 mb-4">
               Quick Navigation
             </h3>
+
             <ul className="space-y-2">
-              {["Home", "About Us", "Services", "Contact"].map((item) => (
-                <li key={item}>
+              {navLinks.map((item) => (
+                <li key={item.name}>
                   <a
-                    href="#"
-                    className="text-blue-900 hover:text-blue-900 transition-colors text-sm"
+                    href={item.path}
+                    className="text-blue-900 hover:text-blue-700 transition text-sm"
                   >
-                    {item}
+                    {item.name}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact Us */}
+          {/* CONTACT US */}
           <div>
             <h3 className="text-lg font-bold text-blue-900 mb-4">
               Contact Us
@@ -69,27 +80,21 @@ export default function Footer() {
 
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-blue-900">
-                <Mail size={16} className="text-blue-900" />
-                <a
-                  href="mailto:contact@company.com"
-                  className="hover:text-blue-900 transition-colors"
-                >
+                <Mail size={16} />
+                <a href="mailto:contact@company.com">
                   contact@company.com
                 </a>
               </li>
 
               <li className="flex items-start gap-2 text-sm text-blue-900">
-                <Phone size={16} className="text-blue-900" />
-                <a
-                  href="tel:+14146875892"
-                  className="hover:text-blue-900 transition-colors"
-                >
+                <Phone size={16} />
+                <a href="tel:+14146875892">
                   (414) 687 - 5892
                 </a>
               </li>
 
               <li className="flex items-start gap-2 text-sm text-blue-900">
-                <MapPin size={16} className="text-blue-900 mt-1" />
+                <MapPin size={16} className="mt-1" />
                 <span>
                   Rahmat Fuel Trading LLC
                   <br />
@@ -99,11 +104,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Service Links */}
+          {/* SERVICES */}
           <div>
             <h3 className="text-lg font-bold text-blue-900 mb-4">
               Services Links
             </h3>
+
             <ul className="space-y-2">
               {[
                 "Fuel Supply",
@@ -113,8 +119,8 @@ export default function Footer() {
               ].map((service) => (
                 <li key={service}>
                   <a
-                    href="#"
-                    className="text-blue-900 hover:text-blue-900 transition-colors text-sm"
+                    href="/Services"
+                    className="text-blue-900 hover:text-blue-700 transition text-sm"
                   >
                     {service}
                   </a>
@@ -127,32 +133,18 @@ export default function Footer() {
         {/* BOTTOM BAR */}
         <div className="pt-6 border-t border-gray-200 flex flex-col lg:flex-row justify-between items-center gap-3 text-sm text-blue-900">
 
-          <p className="text-center lg:text-left">
-            © {new Date().getFullYear()} Rahmat Fuel Trading LLC.
-          </p>
+          <p>© {new Date().getFullYear()} Rahmat Fuel Trading LLC.</p>
 
-          <div className="flex flex-wrap justify-center lg:justify-end gap-3">
-            <span className="whitespace-nowrap">All Rights Reserved</span>
+          <div className="flex flex-wrap gap-3">
+            <span>All Rights Reserved</span>
             <span>|</span>
-
-            <a
-              href="#"
-              className="text-blue-900 transition-colors underline"
-            >
-              Terms & Conditions
-            </a>
-
+            <a href="#" className="underline">Terms & Conditions</a>
             <span>|</span>
-
-            <a
-              href="#"
-              className="hover:text-blue-900 transition-colors underline"
-            >
-              Privacy Policy
-            </a>
+            <a href="#" className="underline">Privacy Policy</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

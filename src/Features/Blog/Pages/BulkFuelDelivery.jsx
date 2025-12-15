@@ -1,8 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import { blogData } from "../Data/BlogData";
+import { Building2, Truck, Factory, Ship, Landmark } from "lucide-react";
 
 export default function BulkFuelDelivery() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: "ease-out-cubic",
+      once: false,
+    });
+    AOS.refresh();
+  }, []);
+
+  const industryIcons = {
+    building: <Building2 className="w-5 h-5 sm:w-6 sm:h-6" />,
+    truck: <Truck className="w-5 h-5 sm:w-6 sm:h-6" />,
+    factory: <Factory className="w-5 h-5 sm:w-6 sm:h-6" />,
+    ship: <Ship className="w-5 h-5 sm:w-6 sm:h-6" />,
+    landmark: <Landmark className="w-5 h-5 sm:w-6 sm:h-6" />,
+  };
+
   const { id } = useParams();
   const blog = blogData.find((item) => item.id === Number(id));
 
@@ -16,68 +37,71 @@ export default function BulkFuelDelivery() {
 
   return (
     <div className="bg-white">
-
       {/* ===== HERO ===== */}
       <section className="px-4 sm:px-6 lg:px-10 py-10">
-        <h1 className="text-3xl sm:text-4xl lg:text-[56px] font-bold text-center mb-4">
+        <h1
+          data-aos="fade-up"
+          className="text-3xl sm:text-4xl lg:text-[56px] font-bold text-center mb-4"
+        >
           {blog.card.title}
         </h1>
 
-        <p className="text-center text-gray-600 mb-8">
+        <p
+          data-aos="fade-up"
+          data-aos-delay="150"
+          className="text-center text-gray-600 mb-8"
+        >
           By {blog.author} | {blog.card.date} | {blog.readTime}
         </p>
 
         <img
+          data-aos="zoom-in"
+          data-aos-delay="300"
           src={blog.heroImage}
           alt={blog.card.title}
-          className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-lg"
+          className="w-full h-48 sm:h-64 md:h-80 lg:h-96 rounded-xl shadow-lg object-cover"
         />
       </section>
 
       {/* ===== INTRO ===== */}
-  <section className="py-14">
-  <div className=" lg:px-10 sm:px-6">
+      <section className="py-14">
+        <div data-aos="fade-up" className="text-center px-6 sm:px-10">
+          <h2 className="text-[28px] sm:text-3xl font-bold text-gray-900 mb-6">
+            {blog.intro.heading}
+          </h2>
 
-    {/* HEADING WITH SIDE LINES */}
-    <div className="flex items-center justify-center gap-4 mb-6">
-      <span className="hidden sm:block w-12 border-t border-gray-400"></span>
-
-      <h2 className="text-lg sm:text-xl font-semibold text-gray-900">
-        {blog.intro.heading}
-      </h2>
-
-      <span className="hidden sm:block w-12 border-t border-gray-400"></span>
-    </div>
-
-    {/* PARAGRAPH */}
-    <p className="text-gray-700 text-sm sm:text-base leading-relaxed text-center whitespace-pre-line">
-      {blog.intro.text}
-    </p>
-
-  </div>
-</section>
-
-
+          <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+            {blog.intro.text}
+          </p>
+        </div>
+      </section>
 
       {/* ===== HOW IT WORKS ===== */}
-      <section className="px-4 sm:px-6 lg:px-10 py-12">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">
+      <section className="bg-white px-4 sm:px-8 lg:px-10 py-10 sm:py-14">
+        <h2
+          data-aos="fade-up"
+          className="text-center text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-10"
+        >
           How It Works
         </h2>
 
-        <div className="space-y-8 lg:px-10 mx-auto">
-          {blog.steps.map((step) => (
-            <div key={step.num} className="flex gap-5">
-              <div className="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-semibold">
+        <div className="space-y-10 px-6 sm:px-10">
+          {blog.steps.map((step, index) => (
+            <div
+              key={step.num}
+              data-aos="fade-up"
+              data-aos-delay={index * 150}
+              className="flex gap-4 sm:gap-6 items-start"
+            >
+              <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-semibold">
                 {step.num}
               </div>
+
               <div>
-                <h3 className="font-semibold text-lg mb-2">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {step.desc}
-                </p>
+                <p className="text-gray-600 leading-relaxed">{step.desc}</p>
               </div>
             </div>
           ))}
@@ -85,61 +109,96 @@ export default function BulkFuelDelivery() {
       </section>
 
       {/* ===== ADVANTAGES ===== */}
-      <section className="bg-gray-100 px-4 sm:px-6 lg:px-10 py-14">
-        <h2 className="text-2xl font-bold text-center mb-6">
-          Why It Matters
-        </h2>
+      <section className="py-10 sm:py-14">
+        <div className="px-6 sm:px-10 lg:px-10">
+          <div
+            data-aos="fade-up"
+            className="bg-white rounded-xl shadow-sm border-l-4 border-gray-800 p-6 sm:p-8 mb-10"
+          >
+            <h2 className="text-xl font-bold text-center mb-6">
+              Why It Matters
+            </h2>
 
-        <ul className="max-w-xl mx-auto space-y-3 mb-10">
-          {blog.advantages.map((item, i) => (
-            <li key={i} className="flex gap-2 text-gray-700">
-              <span>•</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+            {/* ✅ CENTERED LIST WITHOUT max-w */}
+            <ul className="space-y-5">
+              {blog.advantages.map((adv, index) => (
+                <li
+                  key={index}
+                  data-aos="fade-up"
+                  data-aos-delay={`${index * 120}`}
+                  className="flex items-center justify-center gap-4 text-gray-700 text-lg sm:text-xl"
+                >
+                  {/* Bullet */}
+                  <span className="w-2.5 h-2.5 bg-gray-800 rounded-full shrink-0"></span>
 
-        <img
-          src={blog.deliveryImage}
-          alt="Delivery"
-          className="w-full h-48 sm:h-64 lg:h-72 object-cover rounded-xl shadow-lg"
-        />
+                  {/* Text */}
+                  <span className="text-center">{adv}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div
+            data-aos="zoom-in"
+            className="rounded-xl overflow-hidden shadow-lg h-48 sm:h-64 lg:h-72"
+          >
+            <img
+              src={blog.deliveryImage}
+              alt="Fuel delivery"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
       </section>
 
       {/* ===== INDUSTRIES ===== */}
-      <section className="px-4 sm:px-6 lg:px-10 py-14">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">
-          Industries That Depend on This
-        </h2>
+      <section className="py-12">
+        <div className="px-6 sm:px-10 lg:px-10">
+          <h2
+            data-aos="fade-up"
+            className="text-center text-3xl font-bold mb-10"
+          >
+            — Industries That Depend on Bulk Fuel Delivery
+          </h2>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {blog.industries.map((industry, i) => (
-            <div
-              key={i}
-              className="p-5 bg-white border rounded-lg text-center shadow-sm"
-            >
-              {industry}
-            </div>
-          ))}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {blog.industries.map((industry, index) => (
+              <div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 120}
+                className="flex items-center  gap-4 bg-white p-5 rounded-lg hover:shadow-md transition"
+              >
+                <div className="text-blue-900">
+                  {industryIcons[industry.icon]}
+                </div>
+                <span className="font-medium text-gray-700">
+                  {industry.title}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* ===== COMPLIANCE ===== */}
-      <section className="px-4 sm:px-6 lg:px-10 py-10 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+      <section data-aos="fade-up" className="px-6 sm:px-10 lg:px-10 py-10">
+        <h2 className="text-center text-3xl font-bold mb-6">
           UAE Compliance & Safety Standards
         </h2>
-        <p className="text-gray-700 max-w-4xl mx-auto leading-relaxed">
+
+        <p className="text-center text-gray-700 text-lg leading-relaxed">
           {blog.compliance}
         </p>
       </section>
 
       {/* ===== TAKEAWAY ===== */}
-      <section className="px-4 sm:px-6 lg:px-10 py-12 text-center">
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4">
+      <section data-aos="fade-up" className="px-6 sm:px-10 lg:px-10 py-10">
+        <h2 className="text-center text-3xl font-bold mb-6">
           The Final Takeaway
         </h2>
-        <p className="text-gray-700 max-w-4xl mx-auto leading-relaxed">
+
+        <p className="text-center text-gray-700 text-lg leading-relaxed">
           {blog.takeaway}
         </p>
       </section>

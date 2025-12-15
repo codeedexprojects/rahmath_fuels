@@ -1,33 +1,33 @@
+import AOS from "aos";
+import { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
-import Eco from "../../../assets/Images/Eco.jpg"
-import Delivery from "../../../assets/Images/Delivery .jpg"
-import FuelTest from "../../../assets/Images/FuelTest.jpg"
-
-
-
+import Eco from "../../../assets/Images/Eco.jpg";
+import Delivery from "../../../assets/Images/Delivery .jpg";
+import FuelTest from "../../../assets/Images/FuelTest.jpg";
 
 export default function InsightsSection() {
+  useEffect(() => {
+    AOS.init({ duration: 900, once: false });
+  }, []);
+
   const articles = [
     {
       id: 1,
-      image:Delivery,
-        
+      image: Delivery,
       category: "Logistics",
       date: "Feb 2025",
       title: "How Bulk Fuel Delivery Works In The UAE",
     },
     {
       id: 2,
-      image:
-        FuelTest,
+      image: FuelTest,
       category: "Quality",
       date: "Jan 2025",
       title: "Why Fuel Quality Testing Matters",
     },
     {
       id: 3,
-      image:
-        Eco,
+      image: Eco,
       category: "Sustainability",
       date: "Feb 2025",
       title: "The Future Of Eco-Friendly Transport",
@@ -35,49 +35,46 @@ export default function InsightsSection() {
   ];
 
   return (
-    <div className="w-full lg:px-10 mx-auto px-4 py-16 bg-white">
-      <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+    <div
+      data-aos="fade-up"
+      className="w-full lg:px-10 mx-auto px-4 py-16 bg-white"
+    >
+      <h2 className="text-4xl font-bold text-center mb-12">
         Insights & Industry Updates
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-        {articles.map((article) => (
+        {articles.map((article, index) => (
           <div
             key={article.id}
-            className="group overflow-hidden rounded-2xl border border-gray-200 bg-white"
+            data-aos="zoom-in"
+            data-aos-delay={index * 150}
+            className="group overflow-hidden rounded-2xl border border-gray-100 bg-white"
           >
-            {/* ✅ IMAGE + OVERLAY TEXT */}
             <div className="relative h-64 overflow-hidden">
               <img
                 src={article.image}
                 alt={article.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
               />
-
-              {/* Dark Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-              {/* Category Badge */}
-              <div className="absolute top-4 left-4 z-10">
-                <span className="bg-white/90 backdrop-blur-sm text-gray-900 px-4 py-1.5 rounded-full text-sm font-medium">
+              <div className="absolute top-4 left-4">
+                <span className="bg-white px-4 py-1 rounded-full text-sm font-medium">
                   {article.category}
                 </span>
               </div>
 
-              {/* ✅ TEXT ON IMAGE */}
-              <div className="absolute bottom-4 left-4 right-4 z-10">
-                <p className="text-white/80 text-sm mb-1">
-                  {article.date}
-                </p>
-                <h3 className="text-white text-lg font-bold leading-snug">
+              <div className="absolute bottom-4 left-4 right-4">
+                <p className="text-white/80 text-sm">{article.date}</p>
+                <h3 className="text-white text-lg font-bold">
                   {article.title}
                 </h3>
               </div>
             </div>
 
-            {/* ✅ BOTTOM READ MORE → ON HOVER ONLY */}
             <div className="px-5 pb-5">
-              <div className="flex items-center gap-2 text-blue-700 font-medium cursor-pointer 
+              <div className="flex items-center gap-2 text-blue-700 font-medium 
                 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 
                 transition-all duration-300">
                 <span>Read More</span>
@@ -87,14 +84,6 @@ export default function InsightsSection() {
           </div>
         ))}
       </div>
-
-      {/* ✅ VIEW ALL BUTTON */}
-      <div className="flex justify-center">
-        <button className="px-8 py-3 border-2 border-blue-700 text-blue-700 rounded-lg font-semibold hover:bg-blue-700 hover:text-white transition-colors">
-          View All
-        </button>
-      </div>
     </div>
   );
 }
- 

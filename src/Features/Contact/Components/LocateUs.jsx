@@ -1,17 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import QR from "../../../assets/Images/QR.png";
 
 export default function LocateUs() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      easing: "ease-out-cubic",
+      once: false,
+    });
+
+    AOS.refresh();
+  }, []);
+
   return (
-    <section className="py-12 px-10 sm:px-6 md:px-10">
+    <section
+      data-aos="fade-up"
+      className="py-12 px-10 sm:px-6 md:px-10"
+    >
       {/* Centered Heading */}
-      <h2 className="text-center text-3xl sm:text-4xl font-bold text-gray-900 mb-10">
+      <h2
+        data-aos="fade-up"
+        data-aos-delay="100"
+        className="text-center text-3xl sm:text-4xl font-bold text-gray-900 mb-10"
+      >
         Locate Us
       </h2>
 
       {/* Left-Aligned QR Section */}
-      <div className="w-full flex justify-start">
-        <div className="bg-white p-10 sm:p-6 rounded-lg shadow-md">
+      <div
+        data-aos="fade-right"
+        data-aos-delay="250"
+        className="w-full flex justify-start"
+      >
+        <div
+          data-aos="zoom-in"
+          data-aos-delay="400"
+          className="bg-white p-10 sm:p-6 rounded-lg shadow-md"
+        >
           <img
             src={QR}
             alt="QR Code"
