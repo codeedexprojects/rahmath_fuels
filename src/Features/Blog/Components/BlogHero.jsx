@@ -10,18 +10,14 @@ export default function BlogHero() {
       easing: "ease-out-cubic",
       once: false,
     });
-    AOS.refresh();
   }, []);
 
   return (
-    <div
-      data-aos="fade-up"
-      className="w-full bg-white py-12 px-4 sm:px-6 lg:px-10"
-    >
-      <div className="px-10 mx-auto">
+    <section data-aos="fade-up" className="w-full bg-white py-12 lg:py-20">
+      {/* ✅ SAME CONTAINER AS ALL OTHER SECTIONS */}
+      <div className="px-6 sm:px-8 lg:px-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-
-          {/* LEFT SIDE TEXT */}
+          {/* ================= LEFT TEXT ================= */}
           <div
             data-aos="fade-right"
             data-aos-delay="100"
@@ -32,18 +28,20 @@ export default function BlogHero() {
               data-aos-delay="150"
               className="
                 font-bold text-gray-900 leading-tight mb-4
-                text-4xl sm:text-5xl md:text-[60px]
+                text-[45px] sm:text-5xl md:text-[60px]
               "
             >
-              Insights & Industry <br className="hidden md:block" /> Updates
+              Insights & Industry <br />Updates
             </h1>
 
             <p
               data-aos="fade-up"
               data-aos-delay="300"
               className="
-                text-gray-600 mx-auto md:mx-0
-                text-sm sm:text-base lg:text-[24px] font-normal
+                text-gray-600
+                text-sm sm:text-base lg:text-[24px]
+                font-normal
+                mx-auto md:mx-0
               "
             >
               Stay Informed With The Latest News, Trends, And Guidance In Fuel
@@ -51,13 +49,13 @@ export default function BlogHero() {
             </p>
           </div>
 
-          {/* RIGHT SIDE */}
+          {/* ================= RIGHT IMAGE ================= */}
           <div
             data-aos="fade-left"
             data-aos-delay="200"
-            className="relative flex items-center justify-center mb-5"
+            className="relative flex items-center justify-center"
           >
-            {/* GRAY BACKGROUND CIRCLE */}
+            {/* BACKGROUND CIRCLE */}
             <div
               data-aos="zoom-in"
               data-aos-delay="300"
@@ -69,17 +67,16 @@ export default function BlogHero() {
                 md:w-52 md:h-52
                 lg:w-60 lg:h-60
               "
-            ></div>
+            />
 
-            {/* WHITE OVERLAPPING IMAGE CIRCLE */}
+            {/* FOREGROUND IMAGE */}
             <div
               data-aos="zoom-in"
               data-aos-delay="450"
               className="
-                absolute 
+                absolute
                 left-[-40px] top-[40px]
                 rounded-full bg-white shadow-xl overflow-hidden
-                flex items-center justify-center
                 w-48 h-48
                 sm:w-56 sm:h-56
                 md:w-60 md:h-60
@@ -93,9 +90,8 @@ export default function BlogHero() {
               />
             </div>
           </div>
-
         </div>
       </div>
-    </div>
+    </section>
   );
 }

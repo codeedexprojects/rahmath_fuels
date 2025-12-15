@@ -7,27 +7,26 @@ import Truck from "../../../assets/Images/Trans.png";
 import Test from "../../../assets/Images/Testing.png";
 
 export default function FuelServicesHero() {
-
   useEffect(() => {
     AOS.init({
       duration: 900,
       easing: "ease-out-cubic",
-      once: false,   // animate again when scrolling back
+      once: false,
     });
-    AOS.refresh();
   }, []);
 
   return (
     <section
       data-aos="fade-up"
-      className="py-16 px-4 sm:px-6 lg:px-10"
+      className="py-16 lg:py-24 bg-white"
     >
-      <div className="px-10 mx-auto">
+      {/* ✅ SAME CONTAINER AS OTHER SECTIONS */}
+      <div className="px-6 sm:px-8 lg:px-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
-          {/* LEFT CONTENT */}
+          {/* ================= LEFT CONTENT ================= */}
           <div data-aos="fade-right" data-aos-delay="100">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-[45px] sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Trusted Fuel Services For Every Industry
             </h1>
 
@@ -43,14 +42,14 @@ export default function FuelServicesHero() {
             <button
               data-aos="zoom-in"
               data-aos-delay="400"
-              className="bg-blue-900 text-white px-8 py-3 rounded-md font-semibold 
-                hover:bg-blue-800 transition shadow-lg hover:shadow-xl"
+              className="bg-blue-900 text-white px-8 py-3 rounded-md font-semibold
+                         hover:bg-blue-800 transition shadow-lg hover:shadow-xl"
             >
               Get A Quote
             </button>
           </div>
 
-          {/* RIGHT CONTENT — IMAGE GRID */}
+          {/* ================= RIGHT IMAGE GRID ================= */}
           <div className="relative">
 
             <div className="grid grid-cols-2 gap-4">
@@ -60,7 +59,7 @@ export default function FuelServicesHero() {
                 data-aos="fade-down-right"
                 data-aos-delay="200"
                 className="
-                  bg-white rounded-2xl shadow-lg overflow-hidden 
+                  bg-white rounded-2xl shadow-lg overflow-hidden
                   transform rotate-[-3deg] hover:rotate-[-1deg] hover:scale-105
                   transition-all duration-300
                   aspect-[16/10] sm:aspect-[16/9]
@@ -95,8 +94,8 @@ export default function FuelServicesHero() {
                 data-aos="fade-up-right"
                 data-aos-delay="400"
                 className="
-                  bg-white rounded-2xl shadow-lg overflow-hidden 
-                  transform rotate-[2deg] hover:rotate-0 hover:scale-105 
+                  bg-white rounded-2xl shadow-lg overflow-hidden
+                  transform rotate-[2deg] hover:rotate-0 hover:scale-105
                   transition-all duration-300
                   aspect-[16/10] sm:aspect-[16/9]
                 "
@@ -114,17 +113,18 @@ export default function FuelServicesHero() {
             <div
               data-aos="zoom-in"
               data-aos-delay="500"
-              className="absolute -z-10 top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-blue-200 rounded-full blur-3xl opacity-50"
-            ></div>
+              className="absolute -z-10 top-0 right-0 w-20 sm:w-32 h-20 sm:h-32
+                         bg-blue-200 rounded-full blur-3xl opacity-50"
+            />
 
             <div
               data-aos="zoom-in"
               data-aos-delay="600"
-              className="absolute -z-10 bottom-0 left-0 w-24 sm:w-40 h-24 sm:h-40 bg-orange-200 rounded-full blur-3xl opacity-50"
-            ></div>
+              className="absolute -z-10 bottom-0 left-0 w-24 sm:w-40 h-24 sm:h-40
+                         bg-orange-200 rounded-full blur-3xl opacity-50"
+            />
 
           </div>
-
         </div>
       </div>
     </section>
