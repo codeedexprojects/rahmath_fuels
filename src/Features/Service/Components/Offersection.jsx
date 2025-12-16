@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -12,21 +13,25 @@ const services = [
     title: "Fuel Supply",
     desc: "Premium Delivery For Industries, Fleets & Commercial Sectors.",
     img: img1,
+    path: "/FuelSupply",
   },
   {
     title: "Transportation",
     desc: "Safe, On-Time Fuel Logistics With Modern Fleet Tracking.",
     img: img2,
+    path: "/Transpotation",
   },
   {
     title: "Quality Assurance",
     desc: "Strict Testing & Compliance At Every Stage.",
     img: img3,
+    path: "/Quality",
   },
   {
     title: "Environmental Responsibility",
     desc: "Fuel Solutions With Sustainability In Focus.",
     img: img4,
+    path: "/EnviornmentalPage",
   },
 ];
 
@@ -37,7 +42,6 @@ export default function Offersection() {
       easing: "ease-out-cubic",
       once: false,
     });
-    AOS.refresh();
   }, []);
 
   return (
@@ -90,13 +94,16 @@ export default function Offersection() {
                 {item.desc}
               </p>
 
-              {/* LINK */}
-              <a
-                href="#"
-                className="mt-3 inline-flex items-center gap-1 text-blue-700 font-medium text-sm hover:underline"
+              {/* LEARN MORE (NAVIGATION) */}
+              <Link
+                to={item.path}
+                onClick={() => window.scrollTo(0, 0)}
+                className="mt-3 inline-flex items-center gap-1
+                           text-blue-700 font-medium text-sm
+                           hover:underline"
               >
                 Learn More ↗
-              </a>
+              </Link>
             </div>
           ))}
         </div>

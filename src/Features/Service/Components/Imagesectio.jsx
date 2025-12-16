@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { CheckCircle, ArrowRight } from "lucide-react";
@@ -9,6 +10,7 @@ import imgQuality from "../../../assets/Images/Travel.webp";
 import imgEnvironment from "../../../assets/Images/Windmill.webp";
 
 export default function MappedServiceSections() {
+  const navigate = useNavigate();
 
   useEffect(() => {
     AOS.init({
@@ -16,7 +18,6 @@ export default function MappedServiceSections() {
       easing: "ease-out-cubic",
       once: false,
     });
-    AOS.refresh();
   }, []);
 
   const sections = [
@@ -32,6 +33,7 @@ export default function MappedServiceSections() {
         "Strict Quality Control",
       ],
       button: "Request Supply Quote",
+      path: "/EnquiryForm", // ✅ first button
     },
     {
       title: "Fuel Transportation",
@@ -45,6 +47,7 @@ export default function MappedServiceSections() {
         "24/7 Dispatch Support",
       ],
       button: "Speak To Logistics Team",
+      path: "/Contact", // ✅ second button
     },
     {
       title: "Quality Assurance",
@@ -58,6 +61,7 @@ export default function MappedServiceSections() {
         "UAE Regulatory Certifications",
       ],
       button: "View Certification Process",
+      path: "/Quality", // optional route
     },
     {
       title: "Environmental Responsibility",
@@ -71,6 +75,7 @@ export default function MappedServiceSections() {
         "Carbon-Conscious Operations",
       ],
       button: "Our Sustainability Practices",
+      path: "/EnviornmentalPage", // optional route
     },
   ];
 
@@ -83,11 +88,13 @@ export default function MappedServiceSections() {
           <section
             key={index}
             data-aos="fade-up"
-            className="py-16 px-4 sm:px-6 lg:px-10 bg-white"
+            className="py-16 bg-white"
           >
+            {/* ✅ CONSISTENT CONTAINER */}
             <div
               className={`
-                px-10 mx-auto grid md:grid-cols-2 gap-12 items-center
+                px-6 sm:px-8 lg:px-10
+                grid md:grid-cols-2 gap-12 items-center
                 ${reverse ? "md:[direction:rtl]" : ""}
               `}
             >
@@ -95,7 +102,7 @@ export default function MappedServiceSections() {
               <div
                 data-aos={reverse ? "fade-left" : "fade-right"}
                 data-aos-delay="150"
-                className="relative w-full md:[direction:ltr]"
+                className="relative md:[direction:ltr]"
               >
                 <div className="rounded-2xl overflow-hidden shadow-xl">
                   <img
@@ -136,11 +143,17 @@ export default function MappedServiceSections() {
                   ))}
                 </div>
 
+                {/* BUTTON WITH NAVIGATION */}
                 <button
                   data-aos="zoom-in"
                   data-aos-delay="600"
+                  onClick={() => {
+                    navigate(item.path);
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
                   className="
-                    flex items-center gap-2 px-6 py-3 border-2 border-gray-900
+                    flex items-center gap-2 px-6 py-3
+                    border-2 border-gray-900
                     text-gray-900 rounded-lg font-semibold
                     hover:bg-gray-900 hover:text-white
                     transition-all duration-300 group

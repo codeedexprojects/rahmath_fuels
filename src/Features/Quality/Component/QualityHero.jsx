@@ -1,15 +1,12 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useNavigate } from "react-router-dom";
 
-import FuelTank from "../../../assets/Images/FuelTank.webp";
-import Truck from "../../../assets/Images/Trans.webp";
+import img1 from "../../../assets/Images/img2.webp";
+import Truck from "../../../assets/Images/Petrol.jpg";
 import Test from "../../../assets/Images/Testing.webp";
 
 export default function FuelServicesHero() {
-  const navigate = useNavigate();
-
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -21,41 +18,33 @@ export default function FuelServicesHero() {
   return (
     <section
       data-aos="fade-up"
-      className="py-14 lg:py-20 bg-white"
+      className="py-16 lg:py-24 bg-white"
     >
-      {/* CONTAINER */}
+      {/* ✅ SAME CONTAINER AS OTHER SECTIONS */}
       <div className="px-6 sm:px-8 lg:px-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
           {/* ================= LEFT CONTENT ================= */}
           <div data-aos="fade-right" data-aos-delay="100">
-            <h1 className="text-[42px] sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Trusted Fuel Services For Every Industry
+            <h1 className="text-[45px] sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+             Certified Fuel Quality Maintained At Every Stage Of Delivery.
             </h1>
 
             <p
               data-aos="fade-up"
               data-aos-delay="250"
-              className="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed max-w-xl"
+              className="text-gray-600 text-base sm:text-lg mb-8 leading-relaxed"
             >
-              Delivering Certified Petroleum Products With Unmatched Efficiency
-              Across The UAE And Beyond.
+             Every batch of fuel is thoroughly tested and verified to meet international quality, safety, and performance standards before delivery.
             </p>
 
-            <button
-              onClick={() => navigate("/EnquiryForm")}
-              data-aos="zoom-in"
-              data-aos-delay="400"
-              className="bg-blue-900 text-white px-8 py-3 rounded-md font-semibold
-                         hover:bg-blue-800 transition shadow-lg hover:shadow-xl"
-            >
-              Get A Quote
-            </button>
+           
           </div>
 
           {/* ================= RIGHT IMAGE GRID ================= */}
-          <div className="relative flex justify-center">
-            <div className="grid grid-cols-2 gap-4 max-w-md">
+          <div className="relative">
+
+            <div className="grid grid-cols-2 gap-4">
 
               {/* TOP LEFT */}
               <div
@@ -65,7 +54,7 @@ export default function FuelServicesHero() {
                   bg-white rounded-2xl shadow-lg overflow-hidden
                   transform rotate-[-3deg] hover:rotate-[-1deg] hover:scale-105
                   transition-all duration-300
-                  aspect-[16/10]
+                  aspect-[16/10] sm:aspect-[16/9]
                 "
               >
                 <img
@@ -82,7 +71,7 @@ export default function FuelServicesHero() {
                 className="
                   bg-white rounded-2xl shadow-lg overflow-hidden row-span-2
                   transform hover:scale-105 transition-all duration-300
-                  aspect-[3/4]
+                  aspect-[3/4] sm:aspect-[2/3] md:aspect-[3/4] lg:aspect-[4/5]
                 "
               >
                 <img
@@ -100,11 +89,11 @@ export default function FuelServicesHero() {
                   bg-white rounded-2xl shadow-lg overflow-hidden
                   transform rotate-[2deg] hover:rotate-0 hover:scale-105
                   transition-all duration-300
-                  aspect-[16/10]
+                  aspect-[16/10] sm:aspect-[16/9]
                 "
               >
                 <img
-                  src={FuelTank}
+                  src={img1}
                   alt="Fuel storage tanks"
                   className="w-full h-full object-cover"
                 />
@@ -116,18 +105,18 @@ export default function FuelServicesHero() {
             <div
               data-aos="zoom-in"
               data-aos-delay="500"
-              className="absolute -z-10 top-0 right-0 w-24 h-24
+              className="absolute -z-10 top-0 right-0 w-20 sm:w-32 h-20 sm:h-32
                          bg-blue-200 rounded-full blur-3xl opacity-50"
             />
 
             <div
               data-aos="zoom-in"
               data-aos-delay="600"
-              className="absolute -z-10 bottom-0 left-0 w-32 h-32
+              className="absolute -z-10 bottom-0 left-0 w-24 sm:w-40 h-24 sm:h-40
                          bg-orange-200 rounded-full blur-3xl opacity-50"
             />
-          </div>
 
+          </div>
         </div>
       </div>
     </section>

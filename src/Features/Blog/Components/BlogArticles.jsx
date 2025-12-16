@@ -20,7 +20,7 @@ export default function BlogArticles() {
 
         <h2
           data-aos="fade-up"
-          className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8"
+          className="text-2xl sm:text-3xl text-center font-bold text-gray-900 mb-8"
         >
           Explore Our Articles
         </h2>

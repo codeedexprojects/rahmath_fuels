@@ -6,7 +6,8 @@ import HandShake from "../../../assets/Images/Hanshake.webp";
 import { useNavigate } from "react-router-dom";
 
 export default function AboutCompanySection() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -23,6 +24,7 @@ export default function AboutCompanySection() {
       <div className="px-6 sm:px-8 lg:px-10">
         <div className="grid md:grid-cols-2 gap-14 lg:gap-20 items-center mb-20">
 
+          {/* ================= LEFT CONTENT ================= */}
           <div data-aos="fade-right" className="space-y-6">
             <h1
               data-aos="fade-up"
@@ -36,13 +38,14 @@ export default function AboutCompanySection() {
             <p
               data-aos="fade-up"
               data-aos-delay="250"
-              className="text-gray-600 text-base sm:text-lg leading-relaxed"
+              className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-xl"
             >
-              Delivering Certified, High-Quality Fuel Solutions Backed By Decades Of Expertise.
+              Delivering Certified, High-Quality Fuel Solutions Backed By Decades
+              Of Expertise.
             </p>
 
             <button
-            onClick={()=>{navigate('/Contact')}}
+              onClick={() => navigate("/Contact")}
               data-aos="fade-up"
               data-aos-delay="400"
               className="bg-blue-900 text-white px-8 py-3 rounded-md font-semibold
@@ -52,15 +55,17 @@ export default function AboutCompanySection() {
             </button>
           </div>
 
+          {/* ================= RIGHT IMAGE STACK ================= */}
           <div
             data-aos="fade-left"
-            className="relative flex items-end md:items-center gap-3
+            className="relative flex justify-end items-center
                        min-h-[260px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px]"
           >
+            {/* Blue background block */}
             <div
               data-aos="zoom-in"
               data-aos-delay="150"
-              className="absolute top-10 left-12
+              className="absolute top-10 right-24
                          w-[160px] sm:w-[200px] md:w-[240px] lg:w-[300px]
                          h-[100px] sm:h-[130px] md:h-[160px] lg:h-[180px]
                          bg-[#203882] rounded-lg z-0"
@@ -72,15 +77,17 @@ export default function AboutCompanySection() {
               data-aos-delay="300"
               className="relative z-20 rounded-lg mt-20 overflow-hidden shadow-xl
                          w-[180px] sm:w-[210px] md:w-[240px] lg:w-[270px]
-                         h-[240px] sm:h-[260px] md:h-[300px] lg:h-[330px]"
+                         h-[240px] sm:h-[260px] md:h-[300px] lg:h-[330px]
+                         mr-6"
             >
               <img
                 src={truck}
-                alt="truck"
+                alt="Fuel transport truck"
                 className="w-full h-full object-cover"
               />
             </div>
 
+            {/* Handshake image */}
             <div
               data-aos="zoom-in"
               data-aos-delay="450"
@@ -90,7 +97,7 @@ export default function AboutCompanySection() {
             >
               <img
                 src={HandShake}
-                alt="handshake"
+                alt="Business partnership handshake"
                 className="w-full h-full object-cover"
               />
             </div>

@@ -8,6 +8,10 @@ import BlogPage from "./Features/Blog/Pages/BlogPage";
 import BulkFuelDelivery from "./Features/Blog/Pages/BulkFuelDelivery";
 
 import EnquiryForm from "./Features/Home/Components/EnquiryForm";
+import FuelSupply from "./Features/FuelSupply/Pages/FuelSupply";
+import Transpotation from "./Features/Transpotation/Pages/TranspotationPage";
+import Quality from "./Features/Quality/Pages/Quality";
+import EnviornmentalPage from "./Features/Enviornmental/Pages/EnviornmentalPage";
 
 
 function App() {
@@ -22,6 +26,15 @@ function App() {
           <Route path="/Contact" element={<ContactPage />} />
           <Route path="/Blogs" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BulkFuelDelivery />} />
+          <Route path="/FuelSupply" element={<FuelSupply />} />
+          <Route path="/Transpotation" element={<Transpotation/>} />
+          <Route path="/Quality" element={<Quality/>} />
+          <Route path="/EnviornmentalPage" element={<EnviornmentalPage/>} />
+
+
+          
+
+
           
           <Route path="/EnquiryForm" element={<EnquiryForm />} />
 
