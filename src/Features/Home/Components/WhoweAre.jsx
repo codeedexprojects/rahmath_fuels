@@ -1,11 +1,18 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
-import truck from "../../../assets/Images/Trans.png";
-import HandShake from "../../../assets/Images/Hanshake.png";
+import truck from "../../../assets/Images/Trans.webp";
+import HandShake from "../../../assets/Images/Hanshake.webp";
 
 export default function WhoWeAre() {
+  const navigate=useNavigate();
+
+   const AboutNavigate = () => {
+  navigate("/About");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
 
   // ✅ Correct AOS init
   useEffect(() => {
@@ -47,7 +54,7 @@ export default function WhoWeAre() {
             <div
               data-aos="zoom-in"
               data-aos-delay="150"
-              className="relative z-10 rounded-lg overflow-hidden shadow-xl
+              className="relative z-10 rounded-lg lg:mt-20 overflow-hidden shadow-xl
                          w-48 sm:w-64 h-40 sm:h-48"
             >
               <img
@@ -88,7 +95,8 @@ export default function WhoWeAre() {
               Success For Our Customers, Employees, And Communities.
             </p>
 
-            <button className="inline-block px-6 py-3 bg-[#203882] text-white rounded-md
+            <button
+            onClick={AboutNavigate} className="inline-block px-6 py-3 bg-[#203882] text-white rounded-md
                                hover:bg-[#1a2d6b] transition-colors font-medium">
               Learn More About Us
             </button>

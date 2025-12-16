@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
-import QR from "../../../assets/Images/QR.png";
+import QR from "../../../assets/Images/QR.webp";
 
 export default function QuickInquiry() {
   const [formData, setFormData] = useState({

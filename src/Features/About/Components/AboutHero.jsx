@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import truck from "../../../assets/Images/Trans.png";
-import HandShake from "../../../assets/Images/Hanshake.png";
+import truck from "../../../assets/Images/Trans.webp";
+import HandShake from "../../../assets/Images/Hanshake.webp";
 import { useNavigate } from "react-router-dom";
 
 export default function AboutCompanySection() {

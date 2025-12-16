@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import img1 from "../../../assets/Images/Fuel Supply.png";
-import img2 from "../../../assets/Images/Transportation.png";
-import img3 from "../../../assets/Images/Quality Assurance.jpg";
-import img4 from "../../../assets/Images/Environmental Responsibility.png";
+import img1 from "../../../assets/Images/Fuel Supply.webp";
+import img2 from "../../../assets/Images/Trans.webp";
+import img3 from "../../../assets/Images/Quality Assurance.webp";
+import img4 from "../../../assets/Images/Environmental Responsibility.webp";
 
 const services = [
   {

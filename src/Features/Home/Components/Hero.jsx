@@ -3,16 +3,26 @@ import { useNavigate } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import img1 from "../../../assets/Images/img1.png";
-import img2 from "../../../assets/Images/img2.jpg";
-import img3 from "../../../assets/Images/img3.png";
-import img4 from "../../../assets/Images/Fuel Supply.png";
+import img1 from "../../../assets/Images/img1.webp";
+import img2 from "../../../assets/Images/img2.webp";
+import img3 from "../../../assets/Images/img3.webp";
+import img4 from "../../../assets/Images/Fuel Supply.webp";
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
-  const slides = [img1, img2, img3, img4];
+ const EnquiryNavigate = () => {
+  navigate("/EnquiryForm");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+  
+ const ServiceNavigate = () => {
+  navigate("/Services");
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+  const slides = [img1, img2, img3];
 
   /* ================= AOS ================= */
   useEffect(() => {
@@ -80,7 +90,7 @@ export default function Hero() {
               className="flex flex-wrap gap-4 mt-8"
             >
               <button
-                onClick={() => navigate("/EnquiryForm")}
+                onClick={EnquiryNavigate}
                 className="px-5 py-3 bg-[#203882] text-white rounded-md
                            hover:bg-[#1a2d6b] transition"
               >
@@ -88,7 +98,7 @@ export default function Hero() {
               </button>
 
               <button
-              onClick={()=>navigate("/Services")}
+              onClick={ServiceNavigate}
                 className="px-5 py-3 border-2 border-[#CB9A3E]
                            text-[#CB9A3E] rounded-md
                            hover:bg-[#CB9A3E] hover:text-white transition"

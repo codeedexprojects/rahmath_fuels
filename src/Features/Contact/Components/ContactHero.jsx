@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Contact from "../../../assets/Images/Contact.png";
+import Contact from "../../../assets/Images/Contact.webp";
 
 export default function ContactHero() {
   useEffect(() => {

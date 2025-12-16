@@ -1,8 +1,22 @@
 import AOS from "aos";
 import { useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function FuelSupplyCTA() {
+  const navigate = useNavigate();
+  
+   const ContactNavigate = () => {
+    navigate("/Contact");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+    
+   const ServiceNavigate = () => {
+    navigate("/Services");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+  
+  
   useEffect(() => {
     AOS.init({ duration: 900, easing: "ease-out-cubic", once: false });
   }, []);
@@ -20,10 +34,13 @@ export default function FuelSupplyCTA() {
         </div>
 
         <div data-aos="fade-left" className="flex flex-col sm:flex-row gap-4">
-          <button className="bg-white text-gray-900 px-6 py-3 rounded-xl flex items-center gap-2">
+          <button
+          onClick={ContactNavigate}
+           className="bg-white text-gray-900 px-6 py-3 rounded-xl flex items-center gap-2">
             Contact Us <ArrowUpRight />
           </button>
-          <button className="border-2 border-white text-white px-6 py-3 rounded-xl flex items-center gap-2">
+          <button 
+          onClick={ServiceNavigate} className="border-2 border-white text-white px-6 py-3 rounded-xl flex items-center gap-2">
             View Services <ArrowUpRight />
           </button>
         </div>

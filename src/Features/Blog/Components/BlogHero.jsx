@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Blur from "../../../assets/Images/Blur.jpg";
+import Blur from "../../../assets/Images/Blur.webp";
 
 export default function BlogHero() {
   useEffect(() => {

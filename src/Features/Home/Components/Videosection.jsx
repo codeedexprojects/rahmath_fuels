@@ -3,9 +3,9 @@ import AOS from "aos";
 import { ChevronLeft, ChevronRight, Play } from "lucide-react";
 import "aos/dist/aos.css";
 
-import thumbnail1 from "../../../assets/Images/Thumbnail1.jpg";
-import thumbnail2 from "../../../assets/Images/Thumbnail2.jpg";
-import thumbnail3 from "../../../assets/Images/Thumbnail3.png";
+import thumbnail1 from "../../../assets/Images/Thumbnail1.webp";
+import thumbnail2 from "../../../assets/Images/Thumbnail2.webp";
+import thumbnail3 from "../../../assets/Images/Thumbnail3.webp";
 
 export default function VideoCarousel() {
   useEffect(() => {

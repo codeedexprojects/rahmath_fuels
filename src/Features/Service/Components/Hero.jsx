@@ -3,9 +3,9 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
 
-import FuelTank from "../../../assets/Images/FuelTank.jpg";
-import Truck from "../../../assets/Images/Trans.png";
-import Test from "../../../assets/Images/Testing.png";
+import FuelTank from "../../../assets/Images/FuelTank.webp";
+import Truck from "../../../assets/Images/Trans.webp";
+import Test from "../../../assets/Images/Testing.webp";
 
 export default function FuelServicesHero() {
   const navigate=useNavigate();

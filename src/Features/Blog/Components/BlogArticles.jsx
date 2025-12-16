@@ -81,7 +81,7 @@ export default function BlogArticles() {
                     transition-all duration-300
                   "
                 >
-                  <span>Read More</span>
+                  <span className="mt-2-2">Read More</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

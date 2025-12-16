@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Manager from "../../../assets/Images/Manager.jpg";
+import Manager from "../../../assets/Images/Manager.webp";
 
 export default function TestimonialQuote() {
   useEffect(() => {

@@ -3,10 +3,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { CheckCircle, ArrowRight } from "lucide-react";
 
-import Base from "../../../assets/Images/Base.jpg";
-import imgTech from "../../../assets/Images/Tech.jpg";
-import imgQuality from "../../../assets/Images/Travel.jpg";
-import imgEnvironment from "../../../assets/Images/Windmill.jpg";
+import Base from "../../../assets/Images/Base.webp";
+import imgTech from "../../../assets/Images/Tech.webp";
+import imgQuality from "../../../assets/Images/Travel.webp";
+import imgEnvironment from "../../../assets/Images/Windmill.webp";
 
 export default function MappedServiceSections() {
 
