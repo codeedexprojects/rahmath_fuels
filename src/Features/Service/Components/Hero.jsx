@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 
 import FuelTank from "../../../assets/Images/FuelTank.jpg";
 import Truck from "../../../assets/Images/Trans.png";
 import Test from "../../../assets/Images/Testing.png";
 
 export default function FuelServicesHero() {
+  const navigate=useNavigate();
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -40,6 +42,7 @@ export default function FuelServicesHero() {
             </p>
 
             <button
+            onClick={()=>navigate("/EnquiryForm")}
               data-aos="zoom-in"
               data-aos-delay="400"
               className="bg-blue-900 text-white px-8 py-3 rounded-md font-semibold

@@ -88,6 +88,7 @@ export default function Hero() {
               </button>
 
               <button
+              onClick={()=>navigate("/Services")}
                 className="px-5 py-3 border-2 border-[#CB9A3E]
                            text-[#CB9A3E] rounded-md
                            hover:bg-[#CB9A3E] hover:text-white transition"

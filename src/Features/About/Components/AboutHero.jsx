@@ -3,8 +3,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import truck from "../../../assets/Images/Trans.png";
 import HandShake from "../../../assets/Images/Hanshake.png";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutCompanySection() {
+  const navigate=useNavigate();
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -42,6 +44,7 @@ export default function AboutCompanySection() {
             </p>
 
             <button
+            onClick={()=>{navigate('/Contact')}}
               data-aos="fade-up"
               data-aos-delay="400"
               className="bg-blue-900 text-white px-8 py-3 rounded-md font-semibold
