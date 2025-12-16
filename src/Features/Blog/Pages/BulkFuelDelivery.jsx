@@ -2,6 +2,9 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
 
 import { blogData } from "../Data/BlogData";
 import { Building2, Truck, Factory, Ship, Landmark } from "lucide-react";
@@ -197,6 +200,83 @@ export default function BulkFuelDelivery() {
           </p>
         </div>
       </section>
+      {/* ===== DISCOVER MORE ===== */}
+<section className="py-16 bg-white">
+  <div className="px-6 sm:px-8 lg:px-10">
+    <h2
+      data-aos="fade-up"
+      className="text-3xl font-bold text-center mb-12"
+    >
+      Discover More 
+    </h2>
+
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {blogData
+        .filter((item) => item.id !== blog.id) // ❗ exclude current blog
+        .slice(0, 3)
+        .map((item, index) => (
+          <div
+            key={item.id}
+            data-aos="zoom-in"
+            data-aos-delay={index * 150}
+            className="group overflow-hidden rounded-2xl border border-gray-100 bg-white
+                       hover:shadow-lg transition"
+          >
+            {/* ===== IMAGE ===== */}
+            <div className="relative h-64 overflow-hidden">
+              <img
+                src={item.card.image}
+                alt={item.card.title}
+                className="w-full h-full object-cover
+                           group-hover:scale-105 transition duration-500"
+              />
+
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+              {/* Category */}
+              <div className="absolute top-4 left-4 z-10">
+                <span className="bg-white px-4 py-1 rounded-full text-sm font-medium">
+                  {item.card.category}
+                </span>
+              </div>
+
+              {/* Title */}
+              <div className="absolute bottom-4 left-4 right-4 z-10">
+                <p className="text-white/80 text-sm">
+                  {item.card.date}
+                </p>
+                <h3 className="text-white text-lg font-bold">
+                  {item.card.title}
+                </h3>
+              </div>
+            </div>
+
+            {/* ===== READ MORE ===== */}
+            <div className="px-5 pb-5">
+              <Link
+                to={`/blog/${item.id}`}
+                onClick={() => window.scrollTo(0, 0)}
+                className="
+                  flex items-center gap-2 text-blue-700 font-medium
+                  opacity-100 translate-y-0
+                  sm:opacity-0 sm:translate-y-2
+                  sm:group-hover:opacity-100 sm:group-hover:translate-y-0
+                  transition-all duration-300
+                "
+              >
+                <span className="mt-2">Read More</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+        ))}
+    </div>
+  </div>
+</section>
+
+
+
 
     </div>
   );

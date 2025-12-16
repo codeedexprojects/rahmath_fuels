@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="w-full font-sans">
 
-      {/* ===== TOP BAR ===== */}
+  
       <div className="bg-blue-900 text-white text-sm py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-end gap-6 lg:gap-10">
           <div className="flex items-center gap-2">📞 +1 (414) 687 - 5892</div>
@@ -25,16 +25,15 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ===== MAIN NAV ===== */}
+   
       <div className="bg-white shadow">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-4 flex items-center justify-between">
 
-          {/* LOGO */}
+       
           <NavLink to="/" className="flex items-center gap-2">
             <img src={Logo} alt="logo" className="h-10 sm:h-12" />
           </NavLink>
 
-          {/* DESKTOP NAV */}
           <nav className="hidden md:flex gap-6 lg:gap-8 font-medium">
             {navLinks.map((item) => (
               <NavLink
@@ -53,7 +52,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* DESKTOP CTA */}
           <div className="hidden md:flex">
             <NavLink
               to="/EnquiryForm"
@@ -64,7 +62,6 @@ export default function Header() {
             </NavLink>
           </div>
 
-          {/* MOBILE MENU BUTTON */}
           <button
             className="md:hidden text-blue-900"
             onClick={() => setOpen(!open)}
@@ -74,7 +71,6 @@ export default function Header() {
           </button>
         </div>
 
-        {/* ===== MOBILE MENU ===== */}
         {open && (
           <div className="md:hidden bg-white border-t px-6 py-6 space-y-5">
             {navLinks.map((item) => (
@@ -94,7 +90,6 @@ export default function Header() {
               </NavLink>
             ))}
 
-            {/* MOBILE CTA */}
             <NavLink
               to="/EnquiryForm"
               onClick={() => setOpen(false)}

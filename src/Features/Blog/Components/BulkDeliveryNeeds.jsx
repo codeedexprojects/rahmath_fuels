@@ -26,10 +26,8 @@ export default function BulkFuelDeliveryNeeds() {
       data-aos="fade-up"
       className="bg-gray-100 py-10 sm:py-14"
     >
-      {/* CENTERED RESPONSIVE CONTAINER */}
       <div className="px-10 sm:px-6 lg:px-10">
 
-        {/* INFO CARD */}
         <div
           data-aos="fade-up"
           data-aos-delay="100"

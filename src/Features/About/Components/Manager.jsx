@@ -22,7 +22,6 @@ export default function TestimonialQuote() {
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
-          {/* LEFT QUOTE BLOCK */}
           <div
             data-aos="fade-right"
             className="relative p-6 sm:p-8 md:p-10"
@@ -59,7 +58,6 @@ export default function TestimonialQuote() {
             </div>
           </div>
 
-          {/* RIGHT IMAGE + BORDER */}
           <div
             data-aos="fade-left"
             className="relative w-fit mx-auto pr-[14px] sm:pr-[20px]"

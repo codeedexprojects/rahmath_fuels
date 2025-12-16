@@ -16,10 +16,8 @@ export default function BlogArticles() {
 
   return (
     <section className="py-12 lg:py-20 bg-white">
-      {/* ✅ SAME CONTAINER AS ALL OTHER SECTIONS */}
       <div className="px-6 sm:px-8 lg:px-10">
 
-        {/* ===== HEADING ===== */}
         <h2
           data-aos="fade-up"
           className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8"
@@ -27,7 +25,6 @@ export default function BlogArticles() {
           Explore Our Articles
         </h2>
 
-        {/* ===== GRID ===== */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {blogData.map((blog, index) => (
             <div
@@ -37,7 +34,6 @@ export default function BlogArticles() {
               className="group overflow-hidden rounded-2xl border border-gray-200 bg-white
                          hover:shadow-lg transition"
             >
-              {/* ===== IMAGE ===== */}
               <div className="relative h-56 sm:h-64 lg:h-72 overflow-hidden">
                 <img
                   src={blog.card.image}
@@ -47,17 +43,14 @@ export default function BlogArticles() {
                              group-hover:scale-105"
                 />
 
-                {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-                {/* Category */}
                 <div className="absolute top-4 left-4 z-10">
                   <span className="bg-white/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-sm font-medium">
                     {blog.card.category}
                   </span>
                 </div>
 
-                {/* Title */}
                 <div className="absolute bottom-4 left-4 right-4 z-10">
                   <p className="text-white/80 text-sm mb-1">
                     {blog.card.date}
@@ -68,7 +61,6 @@ export default function BlogArticles() {
                 </div>
               </div>
 
-              {/* ===== READ MORE ===== */}
               <div className="px-5 pb-5">
                 <Link
                   to={`/blog/${blog.id}`}

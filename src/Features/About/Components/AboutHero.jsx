@@ -20,11 +20,9 @@ export default function AboutCompanySection() {
       data-aos="fade-up"
       className="bg-white py-16"
     >
-      {/* ✅ MAIN CONTAINER */}
       <div className="px-6 sm:px-8 lg:px-10">
         <div className="grid md:grid-cols-2 gap-14 lg:gap-20 items-center mb-20">
 
-          {/* ================= LEFT CONTENT ================= */}
           <div data-aos="fade-right" className="space-y-6">
             <h1
               data-aos="fade-up"
@@ -54,13 +52,11 @@ export default function AboutCompanySection() {
             </button>
           </div>
 
-          {/* ================= RIGHT IMAGES ================= */}
           <div
             data-aos="fade-left"
             className="relative flex items-end md:items-center gap-3
                        min-h-[260px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px]"
           >
-            {/* Background block */}
             <div
               data-aos="zoom-in"
               data-aos-delay="150"
@@ -85,7 +81,6 @@ export default function AboutCompanySection() {
               />
             </div>
 
-            {/* Handshake image */}
             <div
               data-aos="zoom-in"
               data-aos-delay="450"

@@ -14,7 +14,6 @@ export default function BlogConclusion() {
 
   return (
     <div className="w-full">
-      {/* UAE Compliance Section */}
       <section
         data-aos="fade-up"
         className="w-full px-10 sm:px-6 lg:px-10 py-8 sm:py-10"

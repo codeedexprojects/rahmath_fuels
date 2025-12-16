@@ -14,10 +14,8 @@ export default function BlogHero() {
 
   return (
     <section data-aos="fade-up" className="w-full bg-white py-12 lg:py-20">
-      {/* ✅ SAME CONTAINER AS ALL OTHER SECTIONS */}
       <div className="px-6 sm:px-8 lg:px-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-          {/* ================= LEFT TEXT ================= */}
           <div
             data-aos="fade-right"
             data-aos-delay="100"
@@ -49,13 +47,11 @@ export default function BlogHero() {
             </p>
           </div>
 
-          {/* ================= RIGHT IMAGE ================= */}
           <div
             data-aos="fade-left"
             data-aos-delay="200"
             className="relative flex items-center justify-center"
           >
-            {/* BACKGROUND CIRCLE */}
             <div
               data-aos="zoom-in"
               data-aos-delay="300"
@@ -69,7 +65,6 @@ export default function BlogHero() {
               "
             />
 
-            {/* FOREGROUND IMAGE */}
             <div
               data-aos="zoom-in"
               data-aos-delay="450"

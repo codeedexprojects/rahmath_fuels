@@ -6,7 +6,7 @@ import "aos/dist/aos.css";
 import img1 from "../../../assets/Images/img1.webp";
 import img2 from "../../../assets/Images/img2.webp";
 import img3 from "../../../assets/Images/img3.webp";
-import img4 from "../../../assets/Images/Fuel Supply.webp";
+
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);

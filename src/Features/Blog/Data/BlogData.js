@@ -81,10 +81,10 @@ From Order Placement To Final On-Site Delivery.`,
     ],
 
     compliance:
-      "Bulk Fuel Operations In The UAE Follow Strict Safety And Environmental Regulations Including Licensed Tankers, Certified Drivers, And Regular Inspections.",
+      "All bulk fuel movements in the UAE follow strict regulatory guidelines. Tankers must be licensed, drivers must be certified, and equipment must undergo regular inspections. These measures ensure safe handling and environmental protection throughout the process.",
 
     takeaway:
-      "Bulk Fuel Delivery Is A Reliable, Safe, And Efficient Fuel Supply Solution That Supports The UAE’s Growing Industrial And Commercial Sectors.",
+      "Bulk fuel delivery is a streamlined and highly regulated process designed to keep UAE businesses operating at full capacity. When done correctly, it ensures quality, safety, and uninterrupted performance — making it a key part of the country’s industrial growth.",
   },
 
   /* ======================= BLOG 2 ======================= */

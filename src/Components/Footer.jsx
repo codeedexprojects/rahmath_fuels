@@ -13,7 +13,7 @@ import Logo from "../assets/logos/Logo.png";
 
 export default function Footer() {
 
-  // ✅ SAME NAV LINKS AS HEADER
+  
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Service", path: "/Services" },
@@ -26,10 +26,10 @@ export default function Footer() {
     <footer className="bg-white border-t-2 border-blue-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-10">
 
-        {/* MAIN GRID */}
+       
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mb-10">
 
-          {/* COMPANY INFO */}
+      
           <div>
             <img src={Logo} alt="Logo" className="h-12 mb-4" />
 
@@ -52,7 +52,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* QUICK NAVIGATION – SAME AS HEADER */}
+        
           <div>
             <h3 className="text-lg font-bold text-blue-900 mb-4">
               Quick Navigation
@@ -72,7 +72,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* CONTACT US */}
           <div>
             <h3 className="text-lg font-bold text-blue-900 mb-4">
               Contact Us
@@ -104,7 +103,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* SERVICES */}
+          
           <div>
             <h3 className="text-lg font-bold text-blue-900 mb-4">
               Services Links
@@ -130,7 +129,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* BOTTOM BAR */}
+     
         <div className="pt-6 border-t border-gray-200 flex flex-col lg:flex-row justify-between items-center gap-3 text-sm text-blue-900">
 
           <p>© {new Date().getFullYear()} Rahmat Fuel Trading LLC.</p>
