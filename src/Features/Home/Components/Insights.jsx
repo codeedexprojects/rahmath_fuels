@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 import Eco from "../../../assets/Images/Eco.webp";
 import Delivery from "../../../assets/Images/Delivery.webp";
-import FuelTest from "../../../assets/Images/FuelTest.webp";
+import FuelTest from "../../../assets/Images/LabTest.webp";
 
 export default function InsightsSection() {
   useEffect(() => {
