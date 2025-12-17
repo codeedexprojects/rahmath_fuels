@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import QR from "../../../assets/Images/QR.webp";
 
 export default function GetInTouch() {
@@ -49,14 +49,9 @@ export default function GetInTouch() {
         </div>
 
         {/* RESPONSIVE GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 lg:gap-20">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-16 lg:gap-20">
           {/* LEFT — FORM */}
-          <div
-            data-aos="fade-right"
-            data-aos-delay="200"
-            className="w-full"
-          >
+          <div data-aos="fade-right" data-aos-delay="200" className="w-full">
             <div className="space-y-4 sm:space-y-5">
               <input
                 type="text"
@@ -118,9 +113,9 @@ export default function GetInTouch() {
           <div
             data-aos="fade-left"
             data-aos-delay="300"
-            className="space-y-8 text-gray-700"
+            className="space-y-8 text-gray-700 px-10"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
+            <h3 className="text-2xl sm:text-3xl  font-bold text-gray-900">
               RAHMAT FUEL LLC
             </h3>
 
@@ -135,10 +130,16 @@ export default function GetInTouch() {
             <div className="flex gap-4">
               <Phone size={26} className="mt-1 text-blue-900" />
               <div className="text-base sm:text-lg">
-                <a href="tel:+971652078840" className="block hover:text-blue-900">
+                <a
+                  href="tel:+971652078840"
+                  className="block hover:text-blue-900"
+                >
                   +97 165 207 840
                 </a>
-                <a href="tel:+971509916875" className="block underline hover:text-blue-900">
+                <a
+                  href="tel:+971509916875"
+                  className="block underline hover:text-blue-900"
+                >
                   +97 150 991 6875
                 </a>
               </div>
@@ -154,13 +155,14 @@ export default function GetInTouch() {
               </a>
             </div>
 
-            <p className="text-base sm:text-lg">
-              Office hours: Monday – Saturday
-              <br />
-              9 AM to 8 PM UAE Time
-            </p>
+            <div className="flex items-start gap-4">
+              <Clock size={26} className="mt-1 text-blue-900 flex-shrink-0" />
+              <p className="text-base sm:text-lg leading-relaxed">
+                Office hours: Monday – Saturday
+                <br />9 AM to 8 PM UAE Time
+              </p>
+            </div>
           </div>
-
         </div>
       </div>
     </section>
