@@ -81,25 +81,33 @@ export default function Footer() {
               <li className="flex items-start gap-2 text-sm text-blue-900">
                 <Mail size={16} />
                 <a href="mailto:contact@company.com">
-                  contact@company.com
+                 Info@rahmatfuel.com
                 </a>
               </li>
 
               <li className="flex items-start gap-2 text-sm text-blue-900">
                 <Phone size={16} />
                 <a href="tel:+14146875892">
-                  (414) 687 - 5892
+                  +971 50991 6875
                 </a>
               </li>
 
-              <li className="flex items-start gap-2 text-sm text-blue-900">
-                <MapPin size={16} className="mt-1" />
-                <span>
-                  Rahmat Fuel Trading LLC
-                  <br />
-                  UAE
-                </span>
-              </li>
+              <li className="text-sm text-blue-900">
+  <a
+    href="https://maps.app.goo.gl/jc2fHW9AtkCneZLg7"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-start gap-2 hover:underline hover:text-blue-700 transition"
+  >
+    <MapPin size={16} className="mt-1 flex-shrink-0" />
+    <span>
+      Rahmat Fuel Trading LLC
+      <br />
+      UAE
+    </span>
+  </a>
+</li>
+
             </ul>
           </div>
 

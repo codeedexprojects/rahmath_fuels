@@ -20,8 +20,8 @@ export default function Header() {
   
       <div className="bg-blue-900 text-white text-sm py-2 hidden md:block">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 flex justify-end gap-6 lg:gap-10">
-          <div className="flex items-center gap-2">📞 +1 (414) 687 - 5892</div>
-          <div className="flex items-center gap-2">✉️ contact@company.com</div>
+          <div className="flex items-center gap-2">📞 +971 50991 6875</div>
+          <div className="flex items-center gap-2">✉️Info@rahmatfuel.com</div>
         </div>
       </div>
 

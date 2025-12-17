@@ -25,9 +25,25 @@ export default function GetInTouch() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    alert("Message sent successfully!");
+  // ✅ SEND EXACT FORM DATA TO WHATSAPP
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // WhatsApp number (NO +, NO spaces)
+    const whatsappNumber = "971509916875";
+
+    const message =
+      `Hello Rahmat Fuel Trading LLC 👋\n\n` +
+      `Name: ${formData.name}\n` +
+      `Company: ${formData.company}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone}\n\n` +
+      `Message:\n${formData.message}`;
+
+    const whatsappURL =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
   };
 
   return (
@@ -35,9 +51,8 @@ export default function GetInTouch() {
       data-aos="fade-up"
       className="py-12 sm:py-14 px-4 sm:px-6 bg-gray-50"
     >
-      {/* OUTER CONTAINER */}
       <div className="mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
-        
+
         {/* HEADER */}
         <div
           data-aos="fade-up"
@@ -50,14 +65,16 @@ export default function GetInTouch() {
         </div>
 
         {/* GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 md:gap-16 lg:gap-20">
-          
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 lg:gap-20">
+
           {/* LEFT — FORM */}
           <div data-aos="fade-right" data-aos-delay="200" className="w-full">
-            <div className="space-y-4 sm:space-y-5">
+            <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
+              
               <input
                 type="text"
                 name="name"
+                required
                 placeholder="Name *"
                 value={formData.name}
                 onChange={handleChange}
@@ -76,6 +93,7 @@ export default function GetInTouch() {
               <input
                 type="email"
                 name="email"
+                required
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
@@ -85,6 +103,7 @@ export default function GetInTouch() {
               <input
                 type="tel"
                 name="phone"
+                required
                 placeholder="Phone number *"
                 value={formData.phone}
                 onChange={handleChange}
@@ -93,22 +112,23 @@ export default function GetInTouch() {
 
               <textarea
                 name="message"
+                required
+                rows="5"
                 placeholder="Message"
                 value={formData.message}
                 onChange={handleChange}
-                rows="5"
                 className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 resize-none"
               />
 
               <button
-                onClick={handleSubmit}
+                type="submit"
                 data-aos="fade-up"
                 data-aos-delay="400"
                 className="w-full bg-blue-900 text-white py-3 sm:py-4 rounded-lg font-semibold tracking-wide hover:bg-blue-800 transition-all duration-200"
               >
                 SEND MESSAGE
               </button>
-            </div>
+            </form>
           </div>
 
           {/* RIGHT — CONTACT INFO */}
@@ -133,16 +153,10 @@ export default function GetInTouch() {
               <Phone size={26} className="mt-1 text-blue-900" />
               <div className="text-base sm:text-lg">
                 <a
-                  href="tel:+971652078840"
-                  className="block hover:text-blue-900"
-                >
-                  +97 165 207 840
-                </a>
-                <a
                   href="tel:+971509916875"
                   className="block underline hover:text-blue-900"
                 >
-                  +97 150 991 6875
+                  +971 50 991 6875
                 </a>
               </div>
             </div>

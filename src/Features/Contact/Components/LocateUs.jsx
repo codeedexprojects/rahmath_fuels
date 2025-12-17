@@ -25,34 +25,29 @@ export default function LocateUs() {
         data-aos-delay="100"
         className="text-center text-3xl sm:text-4xl font-bold text-gray-900 mb-10"
       >
-        Locate Us
+   
       </h2>
 
       {/* Left-Aligned QR Section */}
-      <div
-        data-aos="fade-right"
-        data-aos-delay="250"
-        className="w-full flex justify-start"
-      >
-        <div
-          data-aos="zoom-in"
-          data-aos-delay="400"
-          className="bg-white p-10 sm:p-6 rounded-lg shadow-md"
-        >
-          <img
-            src={QR}
-            alt="QR Code"
-            className="
-              w-40 h-40
-              sm:w-56 sm:h-56
-              md:w-64 md:h-64
-              lg:w-72 lg:h-72
-              xl:w-80 xl:h-80
-              object-contain
-            "
-          />
-        </div>
-      </div>
+    <div data-aos="fade-left" className="text-center">
+            <h2 className="text-2xl font-bold mb-4">
+              Open our location in Maps
+            </h2>
+
+            <div className="bg-white p-4 sm:p-6 rounded-lg shadow">
+              <iframe
+                className="w-full rounded-lg
+                           h-[240px]
+                           sm:h-[280px]
+                           md:h-[320px]
+                           lg:h-[360px]"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.1436131763517!2d55.530908475171735!3d25.433461777559607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f7e1dea3ed83%3A0x7a50272f2cdb9ad4!2sRAHMAT%20FUEL%20LLC!5e0!3m2!1sen!2sin!4v1765961756389!5m2!1sen!2sin"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
     </section>
   );
 }
