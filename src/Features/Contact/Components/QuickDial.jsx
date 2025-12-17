@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import QR from "../../../assets/Images/QR.webp";
 
 export default function GetInTouch() {
   const [formData, setFormData] = useState({
@@ -34,22 +33,25 @@ export default function GetInTouch() {
   return (
     <section
       data-aos="fade-up"
-      className="py-14 px-4 sm:px-6 md:px-10 bg-gray-50"
+      className="py-12 sm:py-14 px-4 sm:px-6 bg-gray-50"
     >
-      <div className="px-10 mx-auto">
+      {/* OUTER CONTAINER */}
+      <div className="mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
+        
         {/* HEADER */}
         <div
           data-aos="fade-up"
           data-aos-delay="100"
-          className="text-center mb-12"
+          className="text-center mb-10 sm:mb-12"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
             Get In Touch
           </h2>
         </div>
 
-        {/* RESPONSIVE GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-16 lg:gap-20">
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 md:gap-16 lg:gap-20">
+          
           {/* LEFT — FORM */}
           <div data-aos="fade-right" data-aos-delay="200" className="w-full">
             <div className="space-y-4 sm:space-y-5">
@@ -59,7 +61,7 @@ export default function GetInTouch() {
                 placeholder="Name *"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-5 py-3 sm:px-6 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
               />
 
               <input
@@ -68,7 +70,7 @@ export default function GetInTouch() {
                 placeholder="Company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-5 py-3 sm:px-6 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
               />
 
               <input
@@ -77,7 +79,7 @@ export default function GetInTouch() {
                 placeholder="Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-5 py-3 sm:px-6 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
               />
 
               <input
@@ -86,7 +88,7 @@ export default function GetInTouch() {
                 placeholder="Phone number *"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-5 py-3 sm:px-6 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
               />
 
               <textarea
@@ -95,7 +97,7 @@ export default function GetInTouch() {
                 value={formData.message}
                 onChange={handleChange}
                 rows="5"
-                className="w-full px-5 py-3 sm:px-6 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 resize-none"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 resize-none"
               />
 
               <button
@@ -113,9 +115,9 @@ export default function GetInTouch() {
           <div
             data-aos="fade-left"
             data-aos-delay="300"
-            className="space-y-8 text-gray-700 px-10"
+            className="space-y-6 sm:space-y-8 text-gray-700 px-0 sm:px-6 md:px-10"
           >
-            <h3 className="text-2xl sm:text-3xl  font-bold text-gray-900">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900">
               RAHMAT FUEL LLC
             </h3>
 
@@ -159,10 +161,12 @@ export default function GetInTouch() {
               <Clock size={26} className="mt-1 text-blue-900 flex-shrink-0" />
               <p className="text-base sm:text-lg leading-relaxed">
                 Office hours: Monday – Saturday
-                <br />9 AM to 8 PM UAE Time
+                <br />
+                9 AM to 8 PM UAE Time
               </p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
