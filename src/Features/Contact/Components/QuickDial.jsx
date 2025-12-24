@@ -25,25 +25,26 @@ export default function GetInTouch() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // ✅ SEND EXACT FORM DATA TO WHATSAPP
+  // ✅ SEND FORM DATA VIA EMAIL (GMAIL / DEFAULT MAIL CLIENT)
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // WhatsApp number (NO +, NO spaces)
-    const whatsappNumber = "971509916875";
+    const receiverEmail = "Info@rahmatfuel.com";
+    const subject = "New Enquiry from Website";
 
-    const message =
-      `Hello Rahmat Fuel Trading LLC 👋\n\n` +
+    const body =
+      `Hello Rahmat Fuel Trading LLC,\n\n` +
       `Name: ${formData.name}\n` +
       `Company: ${formData.company}\n` +
       `Email: ${formData.email}\n` +
       `Phone: ${formData.phone}\n\n` +
       `Message:\n${formData.message}`;
 
-    const whatsappURL =
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    const mailtoLink = `mailto:${receiverEmail}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
 
-    window.open(whatsappURL, "_blank");
+    window.location.href = mailtoLink;
   };
 
   return (
@@ -70,7 +71,7 @@ export default function GetInTouch() {
           {/* LEFT — FORM */}
           <div data-aos="fade-right" data-aos-delay="200" className="w-full">
             <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
-              
+
               <input
                 type="text"
                 name="name"
@@ -78,7 +79,7 @@ export default function GetInTouch() {
                 placeholder="Name *"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               />
 
               <input
@@ -87,17 +88,17 @@ export default function GetInTouch() {
                 placeholder="Company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               />
 
               <input
                 type="email"
                 name="email"
                 required
-                placeholder="Email"
+                placeholder="Email *"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               />
 
               <input
@@ -107,7 +108,7 @@ export default function GetInTouch() {
                 placeholder="Phone number *"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-600 outline-none"
               />
 
               <textarea
@@ -117,7 +118,7 @@ export default function GetInTouch() {
                 placeholder="Message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 resize-none"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-600 resize-none outline-none"
               />
 
               <button
@@ -144,30 +145,28 @@ export default function GetInTouch() {
             <div className="flex gap-4">
               <MapPin size={26} className="mt-1 text-blue-900" />
               <p className="text-base sm:text-lg leading-relaxed">
-                Jassim Building, Jurf Industrial Zone 1 - Office No 7 <br />
+                Jassim Building, Jurf Industrial Zone 1 – Office No 7 <br />
                 Ajman – (Br. Dubai) U.A.E
               </p>
             </div>
 
             <div className="flex gap-4">
               <Phone size={26} className="mt-1 text-blue-900" />
-              <div className="text-base sm:text-lg">
-                <a
-                  href="tel:+971509916875"
-                  className="block underline hover:text-blue-900"
-                >
-                  +971 50 991 6875
-                </a>
-              </div>
+              <a
+                href="tel:+971509916875"
+                className="text-base sm:text-lg underline hover:text-blue-900"
+              >
+                +971 50 991 6875
+              </a>
             </div>
 
             <div className="flex gap-4">
               <Mail size={26} className="mt-1 text-blue-900" />
               <a
-                href="mailto:info@rahmatfuel.com"
+                href="mailto:Info@rahmatfuel.com"
                 className="text-base sm:text-lg hover:text-blue-900"
               >
-                info@rahmatfuel.com
+                Info@rahmatfuel.com
               </a>
             </div>
 
@@ -176,7 +175,7 @@ export default function GetInTouch() {
               <p className="text-base sm:text-lg leading-relaxed">
                 Office hours: Monday – Saturday
                 <br />
-                9 AM to 8 PM UAE Time
+                9 AM to 8 PM (UAE Time)
               </p>
             </div>
           </div>

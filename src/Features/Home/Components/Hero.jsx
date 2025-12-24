@@ -24,7 +24,7 @@ export default function Hero() {
 
   const slides = [img1, img2, img3];
 
-  /* ================= AOS ================= */
+
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -33,7 +33,6 @@ export default function Hero() {
     });
   }, []);
 
-  /* ================= AUTO SLIDE ================= */
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
@@ -41,7 +40,7 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, [slides.length]);
 
-  /* ================= POSITION LOGIC ================= */
+
   const getCardStyle = (index) => {
     const total = slides.length;
     const prev = (currentIndex - 1 + total) % total;

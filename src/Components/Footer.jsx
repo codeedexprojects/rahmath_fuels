@@ -145,9 +145,9 @@ export default function Footer() {
           <div className="flex flex-wrap gap-3">
             <span>All Rights Reserved</span>
             <span>|</span>
-            <a href="#" className="underline">Terms & Conditions</a>
+            <a href="/TermsAndConditions" className="underline">Terms & Conditions</a>
             <span>|</span>
-            <a href="#" className="underline">Privacy Policy</a>
+            <a href="/PrivacyPolicy" className="underline">Privacy Policy</a>
           </div>
         </div>
       </div>

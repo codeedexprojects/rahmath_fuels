@@ -16,6 +16,8 @@ import Transpotation from "./Features/Transpotation/Pages/TranspotationPage";
 import Quality from "./Features/Quality/Pages/Quality";
 import EnviornmentalPage from "./Features/Enviornmental/Pages/EnviornmentalPage";
 import LogoLoader from "./Components/Loader";
+import TermsAndConditions from "./Terms/Terms";
+import PrivacyPolicy from "./Terms/PrivacyPolicy";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -48,6 +50,10 @@ function App() {
           <Route path="/Quality" element={<Quality />} />
           <Route path="/EnviornmentalPage" element={<EnviornmentalPage />} />
           <Route path="/EnquiryForm" element={<EnquiryForm />} />
+          <Route path="/TermsAndConditions" element={<TermsAndConditions />} />
+          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+
+
         </Route>
       </Routes>
 

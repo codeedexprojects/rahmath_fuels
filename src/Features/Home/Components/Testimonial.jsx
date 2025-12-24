@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import AOS from "aos";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import profile1 from "../../../assets/Images/profile1.jpg"
+import profile2 from "../../../assets/Images/profile2.jpg"
+import profile3 from "../../../assets/Images/profile3.jpg"
+
 
 export default function ClientTestimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,25 +32,23 @@ export default function ClientTestimonials() {
       id: 1,
       text: "Rahmat Fuel Has Been A Reliable Partner — Consistent Delivery And Unmatched Support Rahmat Fuel Has Been A Reliable Partner — Consistent Delivery And Unmatched Support.",
       name: "Operations Manager",
-      company: "XYZ Logistics",
-      avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
+      company: "TransLogix Freight Services",
+      avatar:profile1
+        
     },
     {
       id: 2,
       text: "Outstanding service quality and timely deliveries. Their team goes above and beyond to ensure our operations run smoothly without any fuel supply disruptions.",
       name: "Fleet Director",
-      company: "ABC Transport",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop",
+      company: "BlueLine Transport Solutions",
+      avatar:profile2
     },
     {
       id: 3,
       text: "We've been working with Rahmat Fuel for years. Their competitive pricing and exceptional customer service make them our preferred fuel supplier.",
       name: "Procurement Head",
       company: "Global Industries",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop",
+      avatar:profile3
     },
   ];
 
