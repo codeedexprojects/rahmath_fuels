@@ -53,7 +53,6 @@ export default function GetInTouch() {
       className="py-12 sm:py-14 px-4 sm:px-6 bg-gray-50"
     >
       <div className="mx-auto px-4 sm:px-6 md:px-10 lg:px-14">
-
         {/* HEADER */}
         <div
           data-aos="fade-up"
@@ -67,11 +66,9 @@ export default function GetInTouch() {
 
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 sm:gap-16 lg:gap-20">
-
           {/* LEFT — FORM */}
           <div data-aos="fade-right" data-aos-delay="200" className="w-full">
             <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
-
               <input
                 type="text"
                 name="name"
@@ -144,10 +141,15 @@ export default function GetInTouch() {
 
             <div className="flex gap-4">
               <MapPin size={26} className="mt-1 text-blue-900" />
-              <p className="text-base sm:text-lg leading-relaxed">
+              <a
+                href="https://maps.app.goo.gl/6LcQyCCufUgK7ktJ6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base sm:text-lg leading-relaxed hover:underline hover:text-blue-900 transition"
+              >
                 Jassim Building, Jurf Industrial Zone 1 – Office No 7 <br />
                 Ajman – (Br. Dubai) U.A.E
-              </p>
+              </a>
             </div>
 
             <div className="flex gap-4">
@@ -174,12 +176,10 @@ export default function GetInTouch() {
               <Clock size={26} className="mt-1 text-blue-900 flex-shrink-0" />
               <p className="text-base sm:text-lg leading-relaxed">
                 Office hours: Monday – Saturday
-                <br />
-                9 AM to 8 PM (UAE Time)
+                <br />9 AM to 8 PM (UAE Time)
               </p>
             </div>
           </div>
-
         </div>
       </div>
     </section>

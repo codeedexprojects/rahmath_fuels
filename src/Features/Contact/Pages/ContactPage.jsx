@@ -8,7 +8,7 @@ export default function ContactPage() {
     <div>
         <ContactHero />
         <GetInTouch />
-        <LocateUs />
+     
       
     </div>
   )
