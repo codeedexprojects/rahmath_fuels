@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
-import { ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import "aos/dist/aos.css";
 
+// 🔹 THUMBNAILS
 import thumbnail1 from "../../../assets/Images/Thumbnail1.webp";
 import thumbnail2 from "../../../assets/Images/Thumbnail2.webp";
 import thumbnail3 from "../../../assets/Images/Thumbnail3.webp";
@@ -17,58 +18,78 @@ export default function VideoCarousel() {
   }, []);
 
   const slides = [
-    { id: 1, image: thumbnail1, title: "Road Transportation" },
-    { id: 2, image: thumbnail2, title: "Business Solutions" },
-    { id: 3, image: thumbnail3, title: "Industrial Facilities" },
+    {
+      id: 1,
+      videoId: "efQ3ao-UUt8",
+      title: "How Deep Are Oil Rigs?",
+      thumbnail: thumbnail1,
+    },
+    {
+      id: 2,
+      videoId: "rTgGqucHAsI",
+      title: "Crude Oil Extraction",
+      thumbnail: thumbnail2,
+    },
+    {
+      id: 3,
+      videoId: "xCxnFCM-Ji0",
+      title:
+        "Great Waters UAE – Offshore Oil & Gas Installation Engineering and PMC",
+      thumbnail: thumbnail3,
+    },
   ];
 
   const extendedSlides = [...slides, ...slides, ...slides];
   const baseLength = slides.length;
 
   const [index, setIndex] = useState(baseLength);
-  const [isAnimating, setIsAnimating] = useState(true);
+  const [animate, setAnimate] = useState(true);
+  const [activeVideo, setActiveVideo] = useState(null);
+
+  const SLIDE_WIDTH = 420;
 
   const next = () => {
-    setIsAnimating(true);
-    setIndex((prev) => prev + 1);
+    setAnimate(true);
+    setActiveVideo(null);
+    setIndex((i) => i + 1);
   };
 
   const prev = () => {
-    setIsAnimating(true);
-    setIndex((prev) => prev - 1);
+    setAnimate(true);
+    setActiveVideo(null);
+    setIndex((i) => i - 1);
   };
 
   useEffect(() => {
     if (index === baseLength * 2) {
       setTimeout(() => {
-        setIsAnimating(false);
+        setAnimate(false);
         setIndex(baseLength);
       }, 700);
     }
+
     if (index === baseLength - 1) {
       setTimeout(() => {
-        setIsAnimating(false);
+        setAnimate(false);
         setIndex(baseLength * 2 - 1);
       }, 700);
     }
   }, [index, baseLength]);
 
   return (
-    <div
-      data-aos="fade-up"
-      className="w-full bg-white py-10 sm:py-16 overflow-hidden"
-    >
-      {/* ✅ overflow clipped here */}
-      <div className="lg:px-10 sm:px-4 overflow-hidden">
-        <div className="relative overflow-hidden h-[300px] sm:h-[420px] md:h-[480px] flex items-center justify-center">
-          
-          {/* SLIDES */}
+    <section data-aos="fade-up" className="w-full bg-white py-16 overflow-hidden">
+      <div className="relative max-w-[1400px] mx-auto">
+
+        {/* SLIDER */}
+        <div className="overflow-hidden">
           <div
             className={`flex items-center ${
-              isAnimating ? "transition-transform duration-700 ease-in-out" : ""
+              animate ? "transition-transform duration-700 ease-in-out" : ""
             }`}
             style={{
-              transform: `translateX(calc(50% - ${(index + 0.5) * 33.3333}%))`,
+              transform: `translateX(calc(50% - ${
+                index * SLIDE_WIDTH + SLIDE_WIDTH / 2
+              }px))`,
             }}
           >
             {extendedSlides.map((slide, i) => {
@@ -77,31 +98,60 @@ export default function VideoCarousel() {
               return (
                 <div
                   key={i}
-                  data-aos="zoom-in"
-                  className="flex-[0_0_33.3333%] px-2 flex justify-center overflow-hidden"
+                  className="flex-shrink-0 px-6"
+                  style={{ width: SLIDE_WIDTH }}
                 >
                   <div
-                    className={`relative rounded-2xl overflow-hidden shadow-xl 
-                    transition-all duration-700 will-change-transform ${
-                      isCenter
-                        ? "scale-110 h-72"
-                        : "scale-95 h-64 opacity-80"
-                    }`}
+                    className={`relative rounded-2xl overflow-hidden shadow-xl
+                      transition-all duration-700
+                      ${isCenter ? "scale-110" : "scale-95 opacity-70"}
+                    `}
                   >
-                    <img
-                      src={slide.image}
-                      alt={slide.title}
-                      className="w-full h-full object-cover"
-                    />
+                    {/* VIDEO / THUMBNAIL */}
+                    <div className="relative w-full aspect-video bg-black ">
+                      {activeVideo === i ? (
+                        <iframe
+                          src={`https://www.youtube.com/embed/${slide.videoId}?autoplay=1`}
+                          title={slide.title}
+                          className="absolute inset-0 w-full h-full"
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          referrerPolicy="strict-origin-when-cross-origin"
+                          allowFullScreen
+                        />
+                      ) : (
+                        <>
+                          {/* THUMBNAIL */}
+                          <img
+                            src={slide.thumbnail}
+                            alt={slide.title}
+                            className="w-full h-full  object-cover"
+                          />
 
-                    <div className="absolute inset-0 bg-black/40" />
+                          {/* OVERLAY */}
+                          <div className="absolute inset-0 bg-black/30" />
 
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <Play className="w-7 h-7 text-white" fill="currentColor" />
+                          {/* PLAY BUTTON */}
+                          <button
+                            onClick={() => setActiveVideo(i)}
+                            className="absolute inset-0 flex items-center justify-center"
+                          >
+                            <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
+                              <svg
+                                viewBox="0 0 24 24"
+                                className="w-8 h-8 text-white ml-1"
+                              >
+                                <path fill="currentColor" d="M8 5v14l11-7z" />
+                              </svg>
+                            </div>
+                          </button>
+                        </>
+                      )}
                     </div>
 
-                    <div className="absolute bottom-4 left-4">
-                      <h3 className="text-white font-semibold">
+                    {/* TITLE */}
+                    <div className="absolute bottom-4 left-4 bg-black/60 px-4 py-2 rounded-lg">
+                      <h3 className="text-white font-semibold text-sm">
                         {slide.title}
                       </h3>
                     </div>
@@ -110,25 +160,25 @@ export default function VideoCarousel() {
               );
             })}
           </div>
+        </div>
 
-          {/* CONTROLS */}
-          <div className="absolute bottom-6 flex gap-6">
-            <button
-              onClick={prev}
-              className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow"
-            >
-              <ChevronLeft />
-            </button>
+        {/* CONTROLS */}
+        <div className="flex justify-center gap-8 mt-10">
+          <button
+            onClick={prev}
+            className="w-11 h-11 rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition"
+          >
+            <ChevronLeft />
+          </button>
 
-            <button
-              onClick={next}
-              className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow"
-            >
-              <ChevronRight />
-            </button>
-          </div>
+          <button
+            onClick={next}
+            className="w-11 h-11 rounded-full bg-white shadow flex items-center justify-center hover:scale-105 transition"
+          >
+            <ChevronRight />
+          </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
