@@ -205,7 +205,7 @@ export default function EnquiryForm() {
             />
             <p>
               I accept the{" "}
-              <span className="text-blue-700 underline">Terms & Condition</span>
+              <a href="/TermsAndConditions" className="text-blue-700 underline">Terms & Condition</a>
               .
             </p>
           </div>
